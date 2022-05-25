@@ -7,5 +7,11 @@ init:
 	docker-compose exec app php artisan storage:link
 	docker-compose exec app chmod -R 777 storage bootstrap/cache
 	@make fresh
+	@make npm-install
+	@make npm-dev
 fresh:
 	docker compose exec app php artisan migrate:fresh --seed
+npm-install:
+	docker-compose exec app npm install
+npm-dev:
+	docker-compose exec app npm run dev
