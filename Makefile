@@ -46,3 +46,8 @@ npm-watch:
 npm-poll:
 	docker compose exec app npm run watch-poll
 
+npm-lint-dry:
+	docker compose exec app npm run lint-dry
+
+npm-lint-fix:
+	docker compose exec app npm run lint-fix
