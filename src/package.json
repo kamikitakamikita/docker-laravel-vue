@@ -9,13 +9,19 @@
         "prod": "npm run production",
         "production": "mix --production",
         "lint-dry": "eslint 'resources/**/*.{js,vue}'",
-        "lint-fix": "eslint --fix 'resources/**/*.{js,vue}'"
+        "lint-fix": "eslint --fix 'resources/**/*.{js,vue}'",
+        "prepare": "cd .. && husky install src/.husky"
+    },
+    "lint-staged": {
+        "resources/**/*.{js,vue}": "npm run lint-fix"
     },
     "devDependencies": {
         "axios": "^0.25",
         "eslint": "^8.18.0",
         "eslint-plugin-vue": "^9.1.1",
+        "husky": "^8.0.0",
         "laravel-mix": "^6.0.6",
+        "lint-staged": "^13.0.3",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
         "vue-loader": "^16.8.3"
